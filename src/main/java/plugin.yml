@@ -1,0 +1,30 @@
+name: ArcadiaChat
+main: com.melvin.arcadiachat.ChatPlugin
+version: 1.0.2.1144
+author: Professor_Melvin
+description: Adds colors to the chat
+database: true
+api-version: 1.14
+loadafter: [Vault]
+commands:
+    ArcadiaChat:
+        description: ArcadiaChat Command
+        aliases: [ac,chat]
+        usage: /ArcadiaChat (nickname/register/unregister/staff)
+permissions:
+    ArcadiaChat.*:
+        default: op
+        children: [Arcadia.StaffChat]
+    ArcadiaChat.StaffChat:
+        default: op
+        description: Allows users to see and join staff chat
+    ArcadiaChat.Nickname:
+        default: op
+        description: Allows users to set nickname for notifications
+    ArcadiaChat.DiscordRegister:
+        default: op
+        description: Allows users to register their discord account
+        children: [Arcadia.DicordChat]
+    ArcadiaChat.DiscordChat:
+        default: op
+        description: Allows users to show up in discord chat

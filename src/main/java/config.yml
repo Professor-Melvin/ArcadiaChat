@@ -1,0 +1,5 @@
+Discord:
+  BotKey:
+  Channel: minecraft-chat
+SQLite:
+  FileName: ArcadiaChat.sqlite
