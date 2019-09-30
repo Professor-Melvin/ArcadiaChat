@@ -112,7 +112,13 @@ public class ChatCommand  implements CommandExecutor, TabExecutor {
         boolean reply = false;
         if((args[0].equals("register"))){
             if(args.length >= 2) {
-                String discordID = DiscordBot.Instance.TryGetDiscordID(args[1]);
+
+                StringBuilder Name = new StringBuilder();
+                for (int i = 1; i < args.length; i++) {
+                    Name.append(args[i]).append(" ");
+                }
+
+                String discordID = DiscordBot.Instance.TryGetDiscordID(Name.toString().substring(0, Name.length() - 1));
                 if (discordID == null) {
                     player.sendMessage(ChatColor.RED + "This user is not registered on the discord server, or does not have permission for the Minecraft chat channel" + ChatColor.RESET);
                     reply = true;
@@ -142,11 +148,23 @@ public class ChatCommand  implements CommandExecutor, TabExecutor {
         if(args.length >= 2){
             if(args[1].toLowerCase().equals("add")){
                 if(args.length >= 3) {
-                    return addNickname(args[2]);
+
+                    StringBuilder Name = new StringBuilder();
+                    for (int i = 2; i < args.length; i++) {
+                        Name.append(args[i]).append(" ");
+                    }
+
+                    return addNickname(Name.toString().substring(0, Name.length() - 1));
                 }
             }else if(args[1].toLowerCase().equals("remove")){
                 if(args.length >= 3) {
-                    return removeNickname(args[2]);
+
+                    StringBuilder Name = new StringBuilder();
+                    for (int i = 2; i < args.length; i++) {
+                        Name.append(args[i]).append(" ");
+                    }
+
+                    return removeNickname(Name.toString().substring(0, Name.length() - 1));
                 }
             }else if(args[1].toLowerCase().equals("deafen")){
                 return deafenNicknames();

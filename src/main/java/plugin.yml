@@ -1,6 +1,6 @@
 name: ArcadiaChat
 main: com.melvin.arcadiachat.ChatPlugin
-version: 1.0.2.1144
+version: 1.0.3.1144
 author: Professor_Melvin
 description: Adds colors to the chat
 database: true
